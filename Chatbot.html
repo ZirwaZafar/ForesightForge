@@ -1,0 +1,69 @@
+<div id="chatbot">
+  <h2>ForesightForge Chatbot</h2>
+  <div id="chat-area">
+    <div id="chat-output"></div>
+  </div>
+  <input type="text" id="chat-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)" />
+</div>
+
+<script>
+  const responses = [
+    "That's an interesting thought!",
+    "Tell me more about it!",
+    "I'm here to help you!",
+    "Foresight is the key to success!",
+    "What a creative idea!",
+    "Let's turn that vision into reality!",
+    "I love your energy! Keep going!"
+  ];
+
+  function getAutoResponse() {
+    const randomIndex = Math.floor(Math.random() * responses.length);
+    return responses[randomIndex];
+  }
+
+  function handleKeyPress(event) {
+    if (event.key === "Enter") {
+      const userInput = document.getElementById("chat-input").value;
+      if (userInput.trim() !== "") {
+        addChat("You: " + userInput);
+        setTimeout(() => {
+          const botResponse = "Bot: " + getAutoResponse();
+          addChat(botResponse);
+        }, 500);
+      }
+      document.getElementById("chat-input").value = "";
+    }
+  }
+
+  function addChat(text) {
+    const chatOutput = document.getElementById("chat-output");
+    const chatLine = document.createElement("div");
+    chatLine.textContent = text;
+    chatOutput.appendChild(chatLine);
+    chatOutput.scrollTop = chatOutput.scrollHeight; // Auto scroll to bottom
+  }
+</script>
+
+<style>
+  #chatbot {
+    width: 300px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  #chat-area {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background-color: #fff;
+  }
+  #chat-input {
+    width: calc(100% - 10px);
+    padding: 5px;
+  }
+  </style>
