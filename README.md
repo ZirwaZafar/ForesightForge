@@ -6,7 +6,7 @@ Welcome to **ForesightForge**! This is the **Future Vision Platform** where inno
 
 Here's an animated version of my name, **Zirwa Zafar**, representing the heart of **ForesightForge**.
 
-![Zirwa Zafar Animation](https://via.placeholder.com/600x200.gif)  
+![Zirwa Zafar Animation](https://i.imgur.com/yourgiflink.gif)  
 *The name represents innovation and creativity!*
 
 ## 🚀 Features
